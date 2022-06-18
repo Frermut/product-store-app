@@ -1,0 +1,19 @@
+.nav-menu .nav-item {
+  margin: 0 8px;
+}
+.nav-menu .nav-item:hover {
+  transition: 300ms;
+  background-color: #eee;
+  opacity: 1;
+}
+.nav-menu .nav-item:hover > .nav-link > i {
+  opacity: 1;
+}
+.nav-menu .nav-item i {
+  text-align: center;
+  display: block;
+  font-size: 24px;
+  opacity: 0.7;
+}
+
+/*# sourceMappingURL=style.css.map */
