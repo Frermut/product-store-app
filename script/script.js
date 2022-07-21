@@ -54,7 +54,7 @@ function renderNavbarLinks() {
 
 function renderSidebarLinks() {
     const list = document.querySelector(".sidebar .list-group");
-    const sidebarLinks = ["laptops", "netBooks", "desktop", "gaming PCS", "tablets", "servers", "monitors", "projectors"] //типо из БД получили инфу 
+    const sidebarLinks = ["all products", "laptops", "desktop", "servers", "monitors", "projectors"] //типо из БД получили инфу 
 
     var newSidebarLinks = sidebarLinks.map((element, ind) => {
         return { id: ind + 1, name: element[0].toUpperCase() + element.substring(1) };
@@ -67,6 +67,7 @@ function renderSidebarLinks() {
         var activeClass = "";
         if (ind == 0) {
             activeClass = 'active';
+            document.querySelector(".active-category").textContent = name;
         }
         var linkMarkup = `<button 
                         data-id="${id}"
@@ -76,11 +77,21 @@ function renderSidebarLinks() {
         list.insertAdjacentHTML('beforeend', linkMarkup);
     });
 
+    filterItems(list);
+}
 
+function renderProducts() {
+    //...s
+}
 
-    // list.addEventListener('click', function(event) {
-    //     event.target.classList.toggle('active');
-    // });
+function filterItems(list) {
+    list.addEventListener('click', function(event) {
+        if (!event.target.classList.contains("active")) {
+            this.querySelector(".active").classList.remove("active");
+            event.target.classList.add('active');
+            document.querySelector(".active-category").textContent = event.target.textContent;
+        }
+    });
 }
 
 function tooltipInit(condition) {
@@ -92,6 +103,7 @@ function tooltipInit(condition) {
 function init() {
     renderNavbarLinks();
     renderSidebarLinks();
+    renderProducts();
     mediaQueries();
 }
 

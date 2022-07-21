@@ -25,5 +25,24 @@ main .sidebar .active {
     color: #dc3545 !important;
 }
 
+main .carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    right: -125px;
+    justify-content: flex-end;
+}
+
+main .carousel-indicators button {
+    border-radius: 50%;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.card .btn {
+    width: 70px;
+    /* height: 100px; */
+    border-radius: 18px;
+}
+
 
 /*# sourceMappingURL=style.css.map */
