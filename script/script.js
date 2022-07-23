@@ -97,7 +97,8 @@ function renderProducts(categories) {
             "countInStock": 8,
             "company": "Acer",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Acer Aspire 5 Slim Laptop.jpg"
         },
         {
             "name": " Acer Aspire 5 Slim Laptop",
@@ -106,7 +107,8 @@ function renderProducts(categories) {
             "countInStock": 0,
             "company": "Acer",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Acer Aspire 5 Slim Laptop ryzen 3.jpg"
         },
         {
             "name": "ASUS VivoBook Thin and Light Laptop",
@@ -115,7 +117,8 @@ function renderProducts(categories) {
             "countInStock": 13,
             "company": "ASUS",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/ASUS VivoBook Thin and Light Laptop.jpg"
         },
 
         {
@@ -125,7 +128,8 @@ function renderProducts(categories) {
             "countInStock": 13,
             "company": "ASUS",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/ASUS VivoBook L203MA Ultra-Thin Laptop.jpg"
         },
         {
             "name": "Acer Aspire Z24-890-UA91 AIO Desktop",
@@ -134,7 +138,8 @@ function renderProducts(categories) {
             "countInStock": 8000,
             "company": "Acer",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Acer Aspire Z24-890-UA91 AIO Desktop.jpg"
         },
         {
             "name": "HP Full HD IPS-WLED Touch Screen",
@@ -143,7 +148,8 @@ function renderProducts(categories) {
             "countInStock": 5,
             "company": "HP",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/HP Full HD IPS-WLED Touch Screen.jpg"
         },
         {
             "name": "HP Spectre Pro x360 G2 Convertible Touchscreen",
@@ -152,7 +158,8 @@ function renderProducts(categories) {
             "countInStock": 16,
             "company": "HP",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/HP Spectre Pro x360 G2 Convertible Touchscreen.jpg"
         },
         {
             "name": "Lenovo Flex 2-in-1 Laptop,Full HD IPS Touchscreen",
@@ -161,7 +168,8 @@ function renderProducts(categories) {
             "countInStock": 7,
             "company": "Lenovo",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Lenovo Flex 2-in-1 Laptop,Full HD IPS Touchscreen.jpg"
         },
         {
             "name": "Acer Spin 3 Convertible Laptop, Full HD IPS Touch",
@@ -170,7 +178,8 @@ function renderProducts(categories) {
             "countInStock": 9,
             "company": "Acer",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Acer Spin 3 Convertible Laptop, Full HD IPS Touch.jpg"
         },
         {
             "name": "Dell XPS 9370 13.3in 4K UHD Touchscreen Laptop PC",
@@ -179,7 +188,8 @@ function renderProducts(categories) {
             "countInStock": 8,
             "company": "Dell",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Dell XPS 9370 13.3in 4K UHD Touchscreen Laptop PC.jpg"
         },
         {
             "name": "Acer Nitro 5 Gaming Laptop",
@@ -188,7 +198,8 @@ function renderProducts(categories) {
             "countInStock": 2,
             "company": "Apple",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Acer Nitro 5 Gaming Laptop.jpg"
         },
         {
             "name": "Razer Blade 15 Gaming Laptop",
@@ -197,7 +208,8 @@ function renderProducts(categories) {
             "countInStock": 4,
             "company": "Razer",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Razer Blade 15 Gaming Laptop.jpg"
         },
         {
             "name": "Dell XPS 13 9370, TouchScreen InfinityEdge 4K",
@@ -206,7 +218,8 @@ function renderProducts(categories) {
             "countInStock": 11,
             "company": "Dell",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Lenovo Flex 2-in-1 Laptop,Full HD IPS Touchscreen.jpg"
         },
         {
             "name": "Apple MacBook Air with Retina Display",
@@ -215,7 +228,8 @@ function renderProducts(categories) {
             "countInStock": 5,
             "company": "Apple",
             "category": "Laptops & PC",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Laptops & PC/Apple MacBook Air with Retina Display.jpg"
         },
         {
             "name": "Apple iPhone 11 Pro Max",
@@ -224,7 +238,8 @@ function renderProducts(categories) {
             "countInStock": 5,
             "company": "Apple",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Apple iPhone 11 Pro Max.jpg"
         },
         {
             "name": "Apple iPhone SE",
@@ -233,7 +248,8 @@ function renderProducts(categories) {
             "countInStock": 12,
             "company": "Apple",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Apple iPhone SE.jpg"
         },
         {
             "name": "Apple iPhone 11",
@@ -242,7 +258,8 @@ function renderProducts(categories) {
             "countInStock": 4,
             "company": "Apple",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Apple iPhone 11.jpg"
         },
         {
             "name": "Apple iPhone XR",
@@ -251,7 +268,8 @@ function renderProducts(categories) {
             "countInStock": 9,
             "company": "Apple",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Apple iPhone XR.jpg"
         },
         {
             "name": "Apple iPhone XS",
@@ -260,7 +278,8 @@ function renderProducts(categories) {
             "countInStock": 8,
             "company": "Apple",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Apple iPhone XS.jpg"
         },
         {
             "name": "Huawei Y7 2019 Dub-LX3y",
@@ -269,7 +288,8 @@ function renderProducts(categories) {
             "countInStock": 20,
             "company": "Huawei",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Huawei Y7 2019 Dub-LX3y.jpg"
         },
         {
             "name": "Huawei Y9 Prime 2019",
@@ -278,7 +298,8 @@ function renderProducts(categories) {
             "countInStock": 14,
             "company": "Huawei",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Huawei Y9 Prime 2019.jpg"
         },
         {
             "name": "Huawei Nova 5T",
@@ -287,7 +308,8 @@ function renderProducts(categories) {
             "countInStock": 7,
             "company": "Huawei",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Huawei Nova 5T.jpg"
         },
         {
             "name": "Huawei P30",
@@ -296,7 +318,8 @@ function renderProducts(categories) {
             "countInStock": 3,
             "company": "Apple",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Huawei P30.jpg"
         },
         {
             "name": "Honor 9X",
@@ -305,7 +328,8 @@ function renderProducts(categories) {
             "countInStock": 6,
             "company": "Apple",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/honor9x.jpg"
         },
         {
             "name": "Samsung Galaxy A20S",
@@ -314,7 +338,8 @@ function renderProducts(categories) {
             "countInStock": 6,
             "company": "Samsung",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Samsung Galaxy A20S.jpg"
         },
         {
             "name": "Samsung Galaxy Note 20",
@@ -323,7 +348,8 @@ function renderProducts(categories) {
             "countInStock": 53,
             "company": "Samsung",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Samsung Galaxy Note 20.jpg"
         },
         {
             "name": "Samsung Galaxy S10",
@@ -332,7 +358,8 @@ function renderProducts(categories) {
             "countInStock": 9,
             "company": "Samsung",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Samsung Galaxy S10.jpg"
         },
         {
             "name": "Samsung Galaxy A30S",
@@ -341,7 +368,8 @@ function renderProducts(categories) {
             "countInStock": 11,
             "company": "Samsung",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Samsung Galaxy A30S.jpg"
         },
         {
             "name": "Samsung Galaxy Note 8",
@@ -350,7 +378,8 @@ function renderProducts(categories) {
             "countInStock": 11,
             "company": "Samsung",
             "category": "Smart Phones",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Smart Phones/Samsung Galaxy Note 8.jpg"
         },
         {
             "name": "Kids Headphones",
@@ -359,7 +388,8 @@ function renderProducts(categories) {
             "countInStock": 13,
             "company": "Noot products",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Kids Headphones.jpg"
         },
         {
             "name": "Wireless Headphones Bluetooth",
@@ -368,7 +398,8 @@ function renderProducts(categories) {
             "countInStock": 9,
             "company": "iJoy ",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Wireless Headphones Bluetooth.jpg"
         },
         {
             "name": "PeohZarr On-Ear Headphones",
@@ -377,7 +408,8 @@ function renderProducts(categories) {
             "countInStock": 6,
             "company": "PeohZarr",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/PeohZarr On-Ear Headphones.jpg"
         },
         {
             "name": "Panasonic Headphones",
@@ -386,7 +418,8 @@ function renderProducts(categories) {
             "countInStock": 20,
             "company": "Panasonic",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Panasonic Headphones.jpg"
         },
         {
             "name": "MX Master 2S Wireless Mouse",
@@ -395,7 +428,8 @@ function renderProducts(categories) {
             "countInStock": 17,
             "company": "Logitech",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/MX Master 2S Wireless Mouse.jpg"
         },
         {
             "name": "Ergonomic Wireless PC Mouse",
@@ -404,7 +438,8 @@ function renderProducts(categories) {
             "countInStock": 0,
             "company": "AmazonBasics",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Ergonomic Wireless PC Mouse.jpg"
         },
         {
             "name": "M535 Bluetooth Mouse",
@@ -413,7 +448,8 @@ function renderProducts(categories) {
             "countInStock": 11,
             "company": "Logitech",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/M535 Bluetooth Mouse.jpg"
         },
         {
             "name": "Gaming Mouse Wired",
@@ -422,7 +458,8 @@ function renderProducts(categories) {
             "countInStock": 7,
             "company": "PICTEK",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Mouse Wired.jpg"
         },
         {
             "name": "Samsung Flash Drive",
@@ -431,7 +468,8 @@ function renderProducts(categories) {
             "countInStock": 20,
             "company": "Samsung",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Samsung Flash Drive.jpg"
         },
         {
             "name": "JUANWE USB Flash Drive",
@@ -440,7 +478,8 @@ function renderProducts(categories) {
             "countInStock": 14,
             "company": "JUANWE",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/JUANWE USB Flash Drive.jpg"
         },
         {
             "name": "SanDisk Flash Drive",
@@ -449,7 +488,8 @@ function renderProducts(categories) {
             "countInStock": 30,
             "company": "SanDisk",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/SanDisk Flash Drive.jpg"
         },
         {
             "name": "Seagate External Hard Drive",
@@ -458,7 +498,8 @@ function renderProducts(categories) {
             "countInStock": 7,
             "company": "Seagate",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Seagate External Hard Drive.jpg"
         },
         {
             "name": "WD External Hard Drive",
@@ -467,7 +508,8 @@ function renderProducts(categories) {
             "countInStock": 9,
             "company": "Western Digital",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/WD External Hard Drive.jpg"
         },
         {
             "name": "Seagate External Hard Drive",
@@ -476,7 +518,8 @@ function renderProducts(categories) {
             "countInStock": 7,
             "company": "Seagate",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Seagate HardDrive.jpg"
         },
         {
             "name": "SanDisk Memory Card",
@@ -485,7 +528,8 @@ function renderProducts(categories) {
             "countInStock": 40,
             "company": "SanDisk ",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/SanDisk Memory Card.jpg"
         },
         {
             "name": "Fitbit Smartwatch",
@@ -494,7 +538,8 @@ function renderProducts(categories) {
             "countInStock": 15,
             "company": "Fitbit ",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Fitbit Smartwatch.jpg"
         },
         {
             "name": "Huawei Wireless Bluetooth Earphone",
@@ -503,7 +548,8 @@ function renderProducts(categories) {
             "countInStock": 22,
             "company": "Huawei ",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Huawei Wireless Bluetooth Earphone.jpg"
         },
         {
             "name": "Samsung Galaxy Watch Active2",
@@ -512,7 +558,8 @@ function renderProducts(categories) {
             "countInStock": 14,
             "company": "Samsung",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Samsung Galaxy Watch Active2.jpg"
         },
         {
             "name": "Anker PowerCore 10000 Portable Charger",
@@ -521,7 +568,8 @@ function renderProducts(categories) {
             "countInStock": 30,
             "company": "Anker",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Anker PowerCore 10000 Portable Charger.jpg"
         },
         {
             "name": "Anker Wireless Charger",
@@ -530,12 +578,12 @@ function renderProducts(categories) {
             "countInStock": 10,
             "company": "Seagate",
             "category": "Other",
-            "user": "5d7a514b5d2c12c7449be042"
+            "user": "5d7a514b5d2c12c7449be042",
+            "img": "img/Other/Anker Wireless Charger.jpg"
         }
     ]`;
 
     const products = JSON.parse(data);
-
 
     let newProducts = products.map((product, id) => {
         let result = categories.find((category, cat_ind) => {
@@ -548,14 +596,16 @@ function renderProducts(categories) {
             categoryId: result.id,
             description: product.description,
             price: product.price,
+            img: product.img,
         }
 
     });
+    console.log(newProducts);
 
     newProducts.forEach(product => {
         let markup = `
         <div class="card mt-2" style="width: 18rem;" data-id="${product.id}" data-category="${product.categoryId}">
-            <img class="card-img-top" src="img/desktops/1.jpg" alt="Card image cap">
+            <img class="card-img-top" src="${product.img}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">${product.name}</h5>
                     <p class="card-text">${product.description}</p>
