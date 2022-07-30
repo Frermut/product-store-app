@@ -604,12 +604,12 @@ function renderProducts(categories) {
 
     newProducts.forEach(product => {
         let markup = `
-        <div class="card mt-2" style="width: 18rem;" data-id="${product.id}" data-category="${product.categoryId}">
-            <img class="card-img-top" src="${product.img}" alt="Card image cap">
+        <div class="card mt-2" style="width: 18rem; " data-id="${product.id}" data-category="${product.categoryId}">
+            <img class="card-img-top" style="width:220px; height:200px; align-self:center;" src="${product.img}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">${product.name}</h5>
                     <p class="card-text">${product.description}</p>
-                    <span class="text-muted d-block fs-2 mb-3">$${product.price.toFixed(2)}</span>
+                    <span class="text-muted d-block fs-2 mb-3 ">$${product.price.toFixed(2)}</span>
                     <a href="#" class="btn btn-danger">View</a>
                 </div>
         </div>
