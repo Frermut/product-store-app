@@ -1,48 +1,40 @@
 .nav-menu .nav-item {
-    margin: 0 8px;
+  margin: 0 10px;
+  transition: 0.3s;
 }
-
-.nav-menu .nav-item:hover {
-    transition: 300ms;
-    background-color: #eee;
-    opacity: 1;
-}
-
-.nav-menu .nav-item:hover>.nav-link>i {
-    opacity: 1;
-}
-
 .nav-menu .nav-item i {
-    text-align: center;
-    display: block;
-    font-size: 24px;
-    opacity: 0.7;
+  display: block;
+  text-align: center;
+  font-size: 28px;
+  opacity: 0.6;
+}
+.nav-menu .nav-item:hover {
+  background-color: #eee;
+}
+.nav-menu .nav-item:hover > .nav-link > i {
+  opacity: 1;
 }
 
 main .sidebar .active {
-    background-color: white;
-    border: none;
-    color: #dc3545 !important;
+  background-color: white;
+  border: none;
+  color: #dc3545;
 }
-
+.carousel {
+  position: relative;
+}
 main .carousel-indicators {
-    position: absolute;
-    bottom: 0;
-    right: -125px;
-    justify-content: flex-end;
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: 0;
+  right: -90px;
+  justify-content: flex-end;
 }
-
 main .carousel-indicators button {
-    border-radius: 50%;
-    width: 10px !important;
-    height: 10px !important;
+  border-radius: 50%;
+  width: 10px !important;
+  height: 10px !important;
 }
-
-.card .btn {
-    width: 70px;
-    /* height: 100px; */
-    border-radius: 18px;
+main .carousel-indicators .active {
+  background-color: #222 !important;
 }
-
-
-/*# sourceMappingURL=style.css.map */
