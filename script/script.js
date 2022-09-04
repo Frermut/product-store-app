@@ -8,7 +8,7 @@ function mediaQueries() {
             element.removeAttribute("title");
         });
     }
-}
+} //отвечает за title взависимости от устройства
 
 function renderNavbarLinks() {
     const list = document.querySelector("#nav-list");
@@ -40,22 +40,35 @@ function renderNavbarLinks() {
     ]; //типо из БД получили инфу 
 
     navbarLinks.forEach(function(elem, id) {
-                var title = elem.title;
-                var icon = elem.icon;
-                var liMarkup = `<li class="nav-item" ${elem.id == 4 ? `data-bs-toggle="modal" data-bs-target="#login"` : ''}>
-                            <a id="navbarlink-${elem.id}" class="nav-link ${elem.id == 5 ? `disabled` : `active`}" 
-                            aria-current="page" 
-                            href="#" 
-                            data-bs-toggle="tooltip" 
-                            data-bs-placement="bottom" 
-                            title="${title}">
-                                <i class="${icon}"></i>
-                                <span class="d-none d-lg-inline">${title}</span>
-                            </a>
-                        </li>`; //Markup - название для переменных с кодом HTML
+        var liMarkup = renderLink(elem, id);
         list.insertAdjacentHTML('beforeend', liMarkup);
     }); // и тут обработали RowData(сырую информацию)
-}
+} // рендерит все иконки 
+
+function renderLink(elem, id) {
+    var title = elem.title;
+    var icon = elem.icon;
+    return `<li class="nav-item ${elem.id == 4 ? 'user-login' : ''}" ${elem.id == 4 ? `data-bs-toggle="modal" data-bs-target="#login"` : ''}>
+                <a id="navbarlink-${elem.id}" class="nav-link ${elem.id == 5 ? `disabled user-card` : `active user-card`} " 
+                ${elem.id == 5 ? `data-bs-toggle="modal" data-bs-target="#userCart"` : `data-bs-toggle="tooltip"`}
+                aria-current="page" 
+                href="#" 
+                data-bs-placement="bottom" 
+                title="${title}">
+                    <i class="${icon}"></i>
+                    <span class="d-none d-lg-inline">${title}</span>
+                </a>
+            </li>`; //Markup - название для переменных с кодом HTML
+} // мокап одной иконки
+
+async function getSidebarLinks() {
+    let resp = await fetch("http://www.demo-it-park.site/getApi/?categories=get");
+    let categories = await resp.json();
+    let newCategories = categories.map((element, ind) => {
+        return { id: ind + 1, name: element[0].toUpperCase() + element.substring(1) };
+    });
+    return newCategories;
+} //запрашивает названия категорий для левого сайдбара
 
 function renderSidebarLinks(data) {
     const list = document.querySelector(".sidebar .list-group");
@@ -79,16 +92,7 @@ function renderSidebarLinks(data) {
     });
 
     filterItems(list, data);
-}
-
-async function getSidebarLinks() {
-    let resp = await fetch("http://www.demo-it-park.site/getApi/?categories=get");
-    let categories = await resp.json();
-    let newCategories = categories.map((element, ind) => {
-        return { id: ind + 1, name: element[0].toUpperCase() + element.substring(1) };
-    });
-    return newCategories;
-}
+} // рендерит левый сайдбар
 
 async function getDataFromApi() {
     let category = await getSidebarLinks();
@@ -119,7 +123,7 @@ async function getDataFromApi() {
     console.log(data);
 
     return data;
-}
+} // получает данные товаров
 
 async function renderProducts(products, catId = 1) {
     if (catId == 1) {
@@ -134,7 +138,7 @@ async function renderProducts(products, catId = 1) {
             }
         });
     }
-}
+} // рендерит товары
 
 function renderProduct(product) {
     let markup = `
@@ -150,7 +154,7 @@ function renderProduct(product) {
     `;
     document.querySelector(".products").insertAdjacentHTML("beforeend", markup);
 
-}
+} // мокап одного товара
 
 function filterItems(list, data) {
     list.addEventListener('click', function(event) {
@@ -163,12 +167,12 @@ function filterItems(list, data) {
             // let products = getProducts(data);
             // console.log(products);
     });
-}
+} // сортирует товары по категориям 
 
 function tooltipInit(condition) {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-}
+} // инструменты для фреймворка
 
 async function auth(login,password) {
     const user = {login,password};
@@ -176,53 +180,116 @@ async function auth(login,password) {
         method: 'POST',
         body: JSON.stringify(user),
     });
-    const data = await resp.text();
+    const data = await resp.json();
     localStorage.setItem('auth',data);
     console.log(login, password, data);
-}
+    if (data != true) {
+        return false;
+    } else {
+        return true;
+    }  
+} // проверка пользователя
 
-function addItemToCard(id) {}
+function addItemToCard(id, products) {
+    products.forEach(product => {
+        if(product.id == id) {
+            const cartWrapper = document.querySelector(".cart-items");
+            const markup = `
+                                <li class="list-group-item d-flex align-items-center">
+                                    <img src="${product.img}" class="img-fluid image" width="60">
+                                    <label class="title" style="flex: 1;text-overflow:ellipsis;overflow:hidden;width:250px;white-space:nowrap;">${product.name}</label>
+                                    <span class="cur fw-bold ms-2 ">$</span><label class="me-2 fw-bold price">${product.price.toFixed(2)}</label>
+                                    <button class="btn btn-danger float-end">X</button>
+                                </li>
+                            `;
+                cartWrapper.insertAdjacentHTML('beforeend', markup);
+        }
+    })
+}
 
 function checkLogin() {
-    const resp = localStorage.getItem('auth');
-    const user = JSON.parse(resp);
-    console.log(user);
-    if (!user) {
-        const elemModal = document.querySelector('#login');
-        const modal = new bootstrap.Modal( elemModal);
-        modal.show();
-    } 
-    // else {
-    //     document.querySelector("#navbarlink-5").classList.toggle("disabled");
-    //     document.querySelector("#navbarlink-5").classList.toggle("active");
-    //  }
-}
+    const isLogin = JSON.parse(localStorage.getItem('auth'));
+    console.log(isLogin);
+    if (!isLogin) {
+        return false;
+    } else {
+        return true;
+    }
+} // проверка регистрационных данных
 
-function eventListenersHandler() {
-    document.querySelector('#login form')?.addEventListener("submit",function(event) {
+// function renderNavbarAuth(params) {
+//     const list = document.querySelector("#nav-list");
+//         const navbarLinksAuth = [{
+//             title: "Logout",
+//             icon: "bi bi-box-arrow-right",
+//             id: 6
+//         }];
+// }
+
+function eventListenersHandler(products) {
+
+    document.querySelector('#login form')?.addEventListener("submit",async function(event) {
         event.preventDefault();
         const login = document.querySelector('#login form').elements.loginField.value;
         const password = document.querySelector('#login form').elements.passwordField.value;
-        
-        auth(login,password);
+        const isAuth = await auth(login,password);
+        const list = document.querySelector("#nav-list");
+        const navbarLinksAuth = [{
+            title: "Logout",
+            icon: "bi bi-box-arrow-right",
+            id: 6
+        }];
+        if (!isAuth) {
+            alert('Данные введены неверно');
+        } else {
+            //закрывае модальное окно при правильной авторизации
+            const loginModal = document.querySelector("#login")?.remove();
+            document.querySelector(".modal-backdrop")?.remove();
+
+            document.querySelector("#navbarlink-5").classList.remove('disabled');
+            document.querySelector("#navbarlink-5").classList.add('active');
+            document.querySelector(".user-login").remove();
+            navbarLinksAuth.forEach(function(elem, id) {
+                var liMarkup = renderLink(elem, id);
+                list.insertAdjacentHTML('beforeend', liMarkup);
+            });
+
+            document.querySelector("#navbarlink-6")?.addEventListener("click", function() {
+                // let key = localStorage.getItem("auth");
+                localStorage.setItem("auth", false);
+                document.querySelector("#nav-list").innerHTML = '';
+                renderNavbarLinks();
+            });
+
+        }
     });
+
     document.querySelector('.products')?.addEventListener("click", function(event) {
         if(event.target.matches('.btn-buy')){
-            checkLogin();
+           const isLogin = checkLogin();
+           if (isLogin != true) {
+               const modal = new bootstrap.Modal(elemModal);
+               const elemModal = document.querySelector('#login');
+               modal.show();
+           } else {
+            const id = event.target.closest(".card").dataset.id;
+            addItemToCard(id, products);
+           }
         }
-        addItemToCard();
+        
     });
-}
+
+} // модуль авторизации
 
 async function init() {
     renderNavbarLinks();
     let data = await getDataFromApi();
     renderSidebarLinks(data);
     renderProducts(data.product);
-    eventListenersHandler();
+    eventListenersHandler(data.product);
     mediaQueries();
-}
+} // функция инициализации
+
 
 init();
 
-//Картинки
