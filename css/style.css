@@ -1,0 +1,40 @@
+.nav-menu .nav-item {
+  margin: 0 10px;
+  transition: 0.3s;
+}
+.nav-menu .nav-item i {
+  display: block;
+  text-align: center;
+  font-size: 28px;
+  opacity: 0.6;
+}
+.nav-menu .nav-item:hover {
+  background-color: #eee;
+}
+.nav-menu .nav-item:hover > .nav-link > i {
+  opacity: 1;
+}
+
+main .sidebar .active {
+  background-color: white;
+  border: none;
+  color: #dc3545;
+}
+.carousel {
+  position: relative;
+}
+main .carousel-indicators {
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: 0;
+  right: -90px;
+  justify-content: flex-end;
+}
+main .carousel-indicators button {
+  border-radius: 50%;
+  width: 10px !important;
+  height: 10px !important;
+}
+main .carousel-indicators .active {
+  background-color: #222 !important;
+}

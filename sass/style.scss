@@ -1,0 +1,25 @@
+.nav-menu {
+    .nav-item {
+        margin: 0 8px;
+        &:hover {
+            transition: 300ms;
+            background-color: #eee;
+            opacity: 1;
+        }
+        &:hover>.nav-link>i {
+            opacity: 1;
+        }
+        i {
+            text-align: center;
+            display: block;
+            font-size: 24px;
+            opacity: 0.7;
+        }
+    }
+}
+
+main .sidebar .active {
+    background-color: white;
+    border: none;
+    color: #dc3545 !important;
+}
