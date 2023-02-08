@@ -190,22 +190,46 @@ async function auth(login,password) {
     }  
 } // проверка пользователя
 
-function addItemToCard(id, products) {
+function calcCart() {
+    let cartProductsPrices = document.querySelectorAll(".price");
+    let total = document.querySelector("#total");
+    let sum = 0;
+    cartProductsPrices.forEach(element => {
+        sum += parseFloat(element.textContent);
+    });
+    //console.log(sum);
+    total.textContent = sum.toFixed(2);
+} // Высчитывает итоговую сумму (Total)
+
+function isAnyProductsInCart() {
+    if (!document.querySelector(".product-cart")) {
+        // document.querySelector(".cart-items").innerHTML = "<i>Cart empty.<i>";
+        document.querySelector(".cart-items").innerHTML = "<i>Cart empty.<i>";
+    }
+} // проверка на наличие продукта в корзине
+
+function addItemToCard(id, products, needLS = false) {
     products.forEach(product => {
         if(product.id == id) {
+            if (needLS == true) {
+                setProductInLs(product); //по флагу проверяем когда сохранять
+            }
             const cartWrapper = document.querySelector(".cart-items");
             const markup = `
-                                <li class="list-group-item d-flex align-items-center">
+                                <li data-id="${product.id}" class="list-group-item d-flex align-items-center product-cart">
                                     <img src="${product.img}" class="img-fluid image" width="60">
                                     <label class="title" style="flex: 1;text-overflow:ellipsis;overflow:hidden;width:250px;white-space:nowrap;">${product.name}</label>
+                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                    <input id="quantity" min="0"  value="1" type="number" class="form-control form-control-sm" />
+                                    </div>
                                     <span class="cur fw-bold ms-2 ">$</span><label class="me-2 fw-bold price">${product.price.toFixed(2)}</label>
-                                    <button class="btn btn-danger float-end">X</button>
+                                    <button class="btn btn-danger float-end delete-item">X</button>
                                 </li>
                             `;
                 cartWrapper.insertAdjacentHTML('beforeend', markup);
         }
     })
-}
+} // добавляет товар в корзину
 
 function checkLogin() {
     const isLogin = JSON.parse(localStorage.getItem('auth'));
@@ -217,14 +241,83 @@ function checkLogin() {
     }
 } // проверка регистрационных данных
 
-// function renderNavbarAuth(params) {
-//     const list = document.querySelector("#nav-list");
-//         const navbarLinksAuth = [{
-//             title: "Logout",
-//             icon: "bi bi-box-arrow-right",
-//             id: 6
-//         }];
-// }
+function renderNavbarAuth() {
+        const list = document.querySelector("#nav-list");
+        const navbarLinksAuth = [{
+            title: "Logout",
+            icon: "bi bi-box-arrow-right",
+            id: 6
+        }];
+        document.querySelector(".user-login")?.remove();
+        navbarLinksAuth.forEach(function(elem, id) {
+            var liMarkup = renderLink(elem, id);
+            list.insertAdjacentHTML('beforeend', liMarkup);
+        });
+        return list, navbarLinksAuth;
+} // рендерит иконку выйти
+
+function notify(text) {
+    const markup = `<div class="alert alert-success message" role="alert"style="position: fixed;
+    top: 3%;
+    left: 1%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    z-index:10 !important;">
+                    ${text}
+                    </div>`;
+    document.body.insertAdjacentHTML('afterbegin', markup);
+    setTimeout(() => {
+        document.querySelector(".message").remove();
+    }, 2000);
+} // уведомление
+
+function setProductInLs(product) {
+    // console.log(product);
+    let cart = JSON.parse(localStorage.getItem("cart")); // [], null
+    if (cart == null) {
+        cart = [];
+    } 
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function deleteItemFromLs(id) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    // console.log(cart);
+ 
+    for (let i = 0; i < cart.length; i++) {
+        if (id == cart[i].id) {
+            cart.splice(i,1); //удаляем только пришедший id и перезаписываем оставшиеся товары в новый массив
+            break;
+        }
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function isUser(products) {
+    const isAuth = checkLogin();
+    if (isAuth) {
+        //вызываем корзину
+        renderNavbarAuth();
+        document.querySelector("#navbarlink-5").classList.remove('disabled');
+        document.querySelector("#navbarlink-5").classList.add('active');
+        // запрос на получение корзины из LS
+        const userCart = JSON.parse(localStorage.getItem('cart'));
+        
+        if (userCart) {
+            userCart.forEach(element => {
+                addItemToCard(element.id, products);            
+                calcCart();
+            });
+        }
+
+        
+     
+    }
+}
 
 function eventListenersHandler(products) {
 
@@ -233,63 +326,102 @@ function eventListenersHandler(products) {
         const login = document.querySelector('#login form').elements.loginField.value;
         const password = document.querySelector('#login form').elements.passwordField.value;
         const isAuth = await auth(login,password);
-        const list = document.querySelector("#nav-list");
-        const navbarLinksAuth = [{
-            title: "Logout",
-            icon: "bi bi-box-arrow-right",
-            id: 6
-        }];
+        
         if (!isAuth) {
             alert('Данные введены неверно');
         } else {
             //закрывае модальное окно при правильной авторизации
             const loginModal = document.querySelector("#login")?.remove();
             document.querySelector(".modal-backdrop")?.remove();
+            document.querySelector("body").style.overflowY = "auto";
 
             document.querySelector("#navbarlink-5").classList.remove('disabled');
             document.querySelector("#navbarlink-5").classList.add('active');
             document.querySelector(".user-login").remove();
-            navbarLinksAuth.forEach(function(elem, id) {
-                var liMarkup = renderLink(elem, id);
-                list.insertAdjacentHTML('beforeend', liMarkup);
-            });
+
+            notify('Вы успешно авторизировались!');
+
+            renderNavbarAuth();
 
             document.querySelector("#navbarlink-6")?.addEventListener("click", function() {
                 // let key = localStorage.getItem("auth");
                 localStorage.setItem("auth", false);
                 document.querySelector("#nav-list").innerHTML = '';
                 renderNavbarLinks();
+                notify("Выполнен выход из профиля!");
             });
-
+           
+            const userCart = JSON.parse(localStorage.getItem('cart'));
+            if (userCart) {
+                userCart.forEach(element => {
+                    addItemToCard(element.id, products);
+                });
+            }
+            calcCart();
         }
-    });
+
+    }); // авторизация
+
+    document.querySelector("#navbarlink-5").addEventListener("click", isAnyProductsInCart);
 
     document.querySelector('.products')?.addEventListener("click", function(event) {
         if(event.target.matches('.btn-buy')){
            const isLogin = checkLogin();
            if (isLogin != true) {
-               const modal = new bootstrap.Modal(elemModal);
                const elemModal = document.querySelector('#login');
+               const modal = new bootstrap.Modal(elemModal);
                modal.show();
            } else {
+            document.querySelector(".cart-items i")?.remove();
             const id = event.target.closest(".card").dataset.id;
-            addItemToCard(id, products);
+            
+            addItemToCard(id, products, true);
+            calcCart();
            }
         }
-        
-    });
 
-} // модуль авторизации
+        
+    }); // работа с модалкой
+
+    document.querySelector(".cart-items").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (event.target.matches(".delete-item")) {
+            let id = parseInt(event.target.parentElement.dataset.id);
+            console.log(id);
+            deleteItemFromLs(id);
+            event.target.parentElement.remove();
+            calcCart();
+            isAnyProductsInCart();
+        }
+    }); // удаление через кнопку Х
+
+    document.querySelector("#clear-all").addEventListener("click", function(event) {
+        event.preventDefault();
+        if(event.target) {
+            let products = document.querySelectorAll(".product-cart");
+            products.forEach(product => {
+                product.remove();
+            });
+            localStorage.removeItem("cart");
+            isAnyProductsInCart();
+            calcCart();
+            notify("Выполнена очистка корзины!");
+        }
+        
+    }); // удаление через кнопку Clear
+
+
+} // модуль авторизации + работа с корзиной
 
 async function init() {
     renderNavbarLinks();
     let data = await getDataFromApi();
     renderSidebarLinks(data);
     renderProducts(data.product);
+    isUser(data.product);
     eventListenersHandler(data.product);
     mediaQueries();
 } // функция инициализации
-
 
 init();
 
